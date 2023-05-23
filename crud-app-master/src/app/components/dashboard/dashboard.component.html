@@ -1,0 +1,35 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button (click)="drawer.toggle();">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>My App</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" routerLink="logout">
+      <span class="material-icons" >logout</span>
+    </button>
+</mat-toolbar>
+
+<mat-drawer-container autosize style="height: 100%;">
+  <mat-drawer #drawer opened="true" mode="side">
+    <mat-nav-list>
+       <mat-list-item routerLink="dashboard">
+        <button mat-button >
+          <mat-icon>dashboard</mat-icon>Dashboard
+        </button>
+      </mat-list-item>
+      <mat-list-item routerLink="home">
+        <button mat-button>
+          <mat-icon>home</mat-icon>Home
+        </button>
+      </mat-list-item>
+      <mat-list-item routerLink="tasks">
+        <button mat-button>
+          <mat-icon>list</mat-icon>Tasks List
+        </button>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <router-outlet ></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

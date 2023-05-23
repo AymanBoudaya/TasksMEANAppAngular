@@ -1,0 +1,68 @@
+
+ <div class="main-body">
+  <div class="row" style="display: flex;justify-content :space-between;">
+    <h1>Liste des tâches</h1>
+    <button mat-raised-button (click)="openAddEmpEditForm()" >
+      Ajouter une tâche
+    </button>
+  </div>
+  <mat-form-field>
+    <mat-label>Recherche</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Note" #input>
+  </mat-form-field>
+
+  <div class="table-container">
+    <table mat-table [dataSource]="dataSource" matSort matSortActive="date" matSortDirection="desc">
+
+      <ng-container matColumnDef="task">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Tâche </th>
+        <td mat-cell *matCellDef="let row"> {{row.task}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="date" >
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+        <td mat-cell *matCellDef="let row">
+          {{row.date |  date: 'dd/MM/yyyy'}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="document">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Document </th>
+        <td mat-cell *matCellDef="let row"> {{row.document}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="observation">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Observation </th>
+        <td mat-cell *matCellDef="let row"> {{row.observation}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="phase">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Phase </th>
+        <td mat-cell *matCellDef="let row"> {{row.phase}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+        <td mat-cell *matCellDef="let row">
+        <button mat-icon-button color="primary" (click)="openEditForm(row)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="deleteTask(row._id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+        </td>
+      </ng-container>
+
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+      </tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"
+    aria-label="Select page of users"
+    [showFirstLastButtons]="true"
+    ></mat-paginator>
+  </div>
+</div>

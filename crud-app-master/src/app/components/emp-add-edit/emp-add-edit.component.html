@@ -1,0 +1,51 @@
+<div mat-dialog-title>
+  <h1>Ajouter une tâche</h1>
+</div>
+<form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+  <div mat-dialog-content class="content">
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Tâche</mat-label>
+        <input matInput type="text" placeholder="Nom" formControlName="task">
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="date">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Observation</mat-label>
+        <input matInput type="text" placeholder="Observation" formControlName="observation">
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Phase</mat-label>
+        <mat-select formControlName="phase">
+          <mat-option *ngFor="let ph of phases" value="{{ph}}">
+            {{ph}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <h4>Document</h4>
+      <mat-form-field appearance="outline">
+        <mat-label>Document</mat-label>
+        <mat-select formControlName="document">
+          <mat-option *ngFor="let ao of documents" value="{{ao}}">
+            {{ao}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div mat-dialog-actions class="action">
+    <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+    <button mat-raised-button color="primary" type="submit">{{data?'Update':'Save'}}</button>
+  </div>
+</form>

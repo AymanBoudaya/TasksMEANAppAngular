@@ -1,0 +1,186 @@
+<div class="container main-body">
+  <h2 class="text-center">Procédure appel d'offres</h2>
+
+  <mat-accordion>
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Réception dossier
+        </mat-panel-title>
+        <mat-panel-description>
+          Pv d'ouverture d'offres, Correspondances, Liste de présence...
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>This is the primary content of the panel.</p>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Préparation rapport d'évaluation et note de présentation (délai 60 jours)
+        </mat-panel-title>
+        <mat-panel-description>
+          Currently I am {{panelOpenState ? 'open' : 'closed'}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>I'm visible because I am open</p>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Envoi pour signature DCP</mat-panel-title>
+        <mat-panel-description>
+          Copies pour signature du directeur central
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>I'm visible because I am open</p>
+      <ul>
+        <li>1 x Rapport d'évaluation des offres signé par les membres de la CEO</li>
+        <li>1 x Note de présentaion en Arabe signée par les membres de la CEO</li>
+        <li>1 x Note Interne vers DCP singée par le directeur</li>
+      </ul>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Envoi vers la CRAC (DR1)
+        </mat-panel-title>
+        <mat-panel-description>
+          5 copies avec note interne dans les chemises
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>I'm visible because I am open</p>
+      <ul>
+        <li>5 x Rapport d'évaluation des offres signé par DCP</li>
+        <li>5 x Note de présentaion en Arabe signé par DCP</li>
+        <li>1 x Note Interne vers DR1 singée par le directeur</li>
+        <li>5 x Dossiers avec page de garde</li>
+      </ul>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Envoi vers conseil adminitratif
+        </mat-panel-title>
+        <mat-panel-description>
+          Copies signés avec PV de la commission CRAC
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>I'm visible because I am open</p>
+      <ul>
+        <li>3 x Rapport d'évaluation des offres</li>
+        <li>3 x Note de présentaion en Arabe</li>
+        <li>3 x Note complémentaire en Arabe</li>
+        <li>22 x Note de présentaion en Arabe</li>
+        <li>22 x Note complémentaire en Arabe + PV de la commission CRAC</li>
+       </ul>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Réception Note DCP vers Conseil d'administration pour attribution des lots
+        </mat-panel-title>
+        <mat-panel-description>
+          Currently I am {{panelOpenState ? 'open' : 'closed'}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>I'm visible because I am open</p>
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Préparation contrats + DAO et envoi vers PDG et DCP pour signature
+        </mat-panel-title>
+        <mat-panel-description>
+          Currently I am {{panelOpenState ? 'open' : 'closed'}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>I'm visible because I am open</p>
+      <ul>
+        <li>1 (ou 2 pour directeur) contrat(s) avec toutes signatures</li>
+        <li>8 ou 11 contrats avec 2 signatures</li>
+        <li>Une ou 4 ou 5 copies pour signature DCP on peut envoyer seulement les pages de signature :
+        <li>CCAP et CCTP copies vierges avec cachet sonede et signatures fournisseur</li>
+        <li>Soumission borderaux et sous-détail (copie)</li>
+        <li>Prorogation et RNE avec le dossier</li>
+        <li>Note interne avec signature Directeur et chef division</li>
+        <li>A ajouter après : offre technique</li>
+      </ul>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Enregistrement
+        </mat-panel-title>
+        <mat-panel-description>
+          Currently I am {{panelOpenState ? 'open' : 'closed'}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>I'm visible because I am open</p>
+      <ul>
+        <li>4 copies : 1 originale + 3 copies avec cachet sonede</li>
+        <li>
+          //!Contrats: 4 contrats (au début 8 avec 2 signatures +2 avec 4
+          signatures)
+        </li>
+        <li>//!Soumission: 4 soumissions</li>
+      </ul>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Copie Enregistrés reçues
+        </mat-panel-title>
+        <mat-panel-description>
+          Currently I am {{panelOpenState ? 'open' : 'closed'}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>I'm visible because I am open</p>
+      <ul>
+        <li>Caution définitive légalisée et enregistrée</li>
+        <li>Copie enregistrée pour Gestionnaire du marché</li>
+        <li>2 x copies pour caisse financière</li>
+        <li>1 x copie pour l'adjudicataire</li>
+      </ul>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Constituants du dossier pour acceptation facture
+        </mat-panel-title>
+        <mat-panel-description>
+          Currently I am {{panelOpenState ? 'open' : 'closed'}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>I'm visible because I am open</p>
+      <ol>
+        <li>
+          <strong> OS de commencement des travaux </strong>(signature chef division
+          et directeur)
+        </li>
+        <li>
+          <strong>Facture </strong>avec date et signature Chef division et cachet
+          d'arrivée + signature et cachet fournisseur
+        </li>
+        <li>
+          <strong>Bon de livraison </strong>(les prix ne sont pas obligatoires) avec
+          signature chef section et chef service
+        </li>
+        <li><strong>Pv de réception</strong></li>
+        <li><strong>Attachement contradictoire</strong></li>
+        <li>
+          <strong>Fiche de renseignements</strong> (inclut les travaux, dates et
+          durées , quantités et signature sonede et fournisseur)
+        </li>
+      </ol>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+
+</div>
